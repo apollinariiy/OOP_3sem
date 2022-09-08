@@ -115,14 +115,34 @@ namespace OOP_lab1
                 Console.WriteLine(number);
             }
             //c
-            int[][] arr3 = new int[3][];
-            arr3[0] = new int[] { 1, 3 };
-            arr3[1] = new int[] { 1, 3, 5 };
-            arr3[2] = new int[] { 1, 3, 4, 7 };
+            double[][] jaggedArr = new double[3][];
+            jaggedArr[0] = new double[2];
+            jaggedArr[1] = new double[3];
+            jaggedArr[2] = new double[4];
 
-            foreach (int[] row in arr3)
+            Console.WriteLine("Заполните ступенчатый массив: ");
+            for (int i1 = 0; i1 < 2; i1++)
             {
-                foreach (int number in row)
+                jaggedArr[0][i1] = Convert.ToDouble(Console.ReadLine());
+            }
+
+            Console.WriteLine();
+            for (int i1 = 0; i1 < 3; i1++)
+            {
+                jaggedArr[1][i1] = Convert.ToDouble(Console.ReadLine());
+            }
+
+            Console.WriteLine();
+            for (int i1 = 0; i1 < 4; i1++)
+            {
+                jaggedArr[2][i1] = Convert.ToDouble(Console.ReadLine());
+            }
+
+
+
+            foreach (double[] row in jaggedArr)
+            {
+                foreach (double number in row)
                 {
                     Console.Write($"{number} \t");
                 }
