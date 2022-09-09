@@ -208,13 +208,13 @@ namespace OOP_lab1
 
             //6CHECKED
 
-            int qwe = 100;
+            int numb = 100;
             int LocalFunction2()
             {
                 int check = Int32.MaxValue;
                 unchecked
                 {
-                    check = check + qwe;
+                    check = check + numb;
                     Console.WriteLine(check);
                 }
                 return check;
@@ -224,7 +224,7 @@ namespace OOP_lab1
                 int check = Int32.MaxValue;
                 checked
                 {
-                    check = check + qwe;
+                    check = check + numb;
                     Console.WriteLine(check);
                 }
                 return check;
