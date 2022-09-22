@@ -162,6 +162,11 @@ namespace lab2
             int age = 2022 - birthday;
             return age;
         }
+        public override int GetHashCode()   
+         //расчет уникального номера
+        {
+            return (Birthday + Group) / 2;
+        }
     }
 }
 //----------------------------------
@@ -215,12 +220,11 @@ class Class1
         else
             Console.WriteLine("\n\n   1-ый и 2-ой студент  не одинаковые.");
 
-        //анонимный 
+        //Анонимный тип (по образцу вашего класса). 
         var Anonim = new { Name = "Kate", Age = 22 };
         Console.WriteLine(Anonim.Name + " " + Anonim.Age);
 
-        Console.ReadLine();
-    }
+}
 }
         
 

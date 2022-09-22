@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\3sem\\ООП\\лр1\\OOP_lab1\\OOP_lab1\\OOP_lab1.csproj",
+      "projectUniqueName": "D:\\3sem\\ООП\\лабы\\лр1\\OOP_lab1\\OOP_lab1\\OOP_lab1.csproj",
       "projectName": "OOP_lab1",
-      "projectPath": "D:\\3sem\\ООП\\лр1\\OOP_lab1\\OOP_lab1\\OOP_lab1.csproj",
+      "projectPath": "D:\\3sem\\ООП\\лабы\\лр1\\OOP_lab1\\OOP_lab1\\OOP_lab1.csproj",
       "packagesPath": "C:\\Users\\Друг\\.nuget\\packages\\",
-      "outputPath": "D:\\3sem\\ООП\\лр1\\OOP_lab1\\OOP_lab1\\obj\\",
+      "outputPath": "D:\\3sem\\ООП\\лабы\\лр1\\OOP_lab1\\OOP_lab1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Друг\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -56,24 +56,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[3.1.10, 3.1.10]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[3.1.28, 3.1.28]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[3.1.0, 3.1.0]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[3.1.0, 3.1.0]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"

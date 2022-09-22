@@ -26,3 +26,17 @@ D:\3sem\ООП\лр1\OOP_lab1\OOP_lab1\obj\Debug\netcoreapp3.1\OOP_lab1.csproj.C
 D:\3sem\ООП\лр1\OOP_lab1\OOP_lab1\obj\Debug\netcoreapp3.1\OOP_lab1.dll
 D:\3sem\ООП\лр1\OOP_lab1\OOP_lab1\obj\Debug\netcoreapp3.1\OOP_lab1.pdb
 D:\3sem\ООП\лр1\OOP_lab1\OOP_lab1\obj\Debug\netcoreapp3.1\OOP_lab1.genruntimeconfig.cache
+D:\3sem\ООП\лабы\лр1\OOP_lab1\OOP_lab1\bin\Debug\netcoreapp3.1\OOP_lab1.exe
+D:\3sem\ООП\лабы\лр1\OOP_lab1\OOP_lab1\bin\Debug\netcoreapp3.1\OOP_lab1.deps.json
+D:\3sem\ООП\лабы\лр1\OOP_lab1\OOP_lab1\bin\Debug\netcoreapp3.1\OOP_lab1.runtimeconfig.json
+D:\3sem\ООП\лабы\лр1\OOP_lab1\OOP_lab1\bin\Debug\netcoreapp3.1\OOP_lab1.runtimeconfig.dev.json
+D:\3sem\ООП\лабы\лр1\OOP_lab1\OOP_lab1\bin\Debug\netcoreapp3.1\OOP_lab1.dll
+D:\3sem\ООП\лабы\лр1\OOP_lab1\OOP_lab1\bin\Debug\netcoreapp3.1\OOP_lab1.pdb
+D:\3sem\ООП\лабы\лр1\OOP_lab1\OOP_lab1\obj\Debug\netcoreapp3.1\OOP_lab1.csproj.AssemblyReference.cache
+D:\3sem\ООП\лабы\лр1\OOP_lab1\OOP_lab1\obj\Debug\netcoreapp3.1\OOP_lab1.GeneratedMSBuildEditorConfig.editorconfig
+D:\3sem\ООП\лабы\лр1\OOP_lab1\OOP_lab1\obj\Debug\netcoreapp3.1\OOP_lab1.AssemblyInfoInputs.cache
+D:\3sem\ООП\лабы\лр1\OOP_lab1\OOP_lab1\obj\Debug\netcoreapp3.1\OOP_lab1.AssemblyInfo.cs
+D:\3sem\ООП\лабы\лр1\OOP_lab1\OOP_lab1\obj\Debug\netcoreapp3.1\OOP_lab1.csproj.CoreCompileInputs.cache
+D:\3sem\ООП\лабы\лр1\OOP_lab1\OOP_lab1\obj\Debug\netcoreapp3.1\OOP_lab1.dll
+D:\3sem\ООП\лабы\лр1\OOP_lab1\OOP_lab1\obj\Debug\netcoreapp3.1\OOP_lab1.pdb
+D:\3sem\ООП\лабы\лр1\OOP_lab1\OOP_lab1\obj\Debug\netcoreapp3.1\OOP_lab1.genruntimeconfig.cache

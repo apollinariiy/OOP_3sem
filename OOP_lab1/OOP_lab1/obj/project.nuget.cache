@@ -1,13 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "asVM3dDVav5gQ2XDI0GVrWNC43bbZpMOhXEi5opnhfjp9mGpMvKK6hPR7GlHal/YiYzEoZurLCbmuXXoNqLdlA==",
+  "dgSpecHash": "HnwrSkG52d4XQHMfxRGm6fSmdK4Il2SnBLmg9L2aSPWcDec4+saqDRHUgKbFvn97pU2V8V5Fc8ZqCDacRJEV0g==",
   "success": true,
-  "projectFilePath": "D:\\3sem\\ООП\\лр1\\OOP_lab1\\OOP_lab1\\OOP_lab1.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\Друг\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.28\\microsoft.netcore.app.host.win-x64.3.1.28.nupkg.sha512",
-    "C:\\Users\\Друг\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
-    "C:\\Users\\Друг\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.1.0\\microsoft.windowsdesktop.app.ref.3.1.0.nupkg.sha512",
-    "C:\\Users\\Друг\\.nuget\\packages\\microsoft.netcore.app.ref\\3.1.0\\microsoft.netcore.app.ref.3.1.0.nupkg.sha512"
-  ],
+  "projectFilePath": "D:\\3sem\\ООП\\лабы\\лр1\\OOP_lab1\\OOP_lab1\\OOP_lab1.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }
