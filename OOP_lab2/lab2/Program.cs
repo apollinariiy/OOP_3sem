@@ -13,7 +13,7 @@ namespace lab2
 {
     partial class Student
     {
-        public readonly int id;
+        private readonly int id;
         private string surname;
         private string name;
         private string middlename;
@@ -24,6 +24,11 @@ namespace lab2
         private int course;
         private int group;
         public static short count = 0;
+        
+        public int Id
+        {
+            get { return id; }
+        }
         public string Surname
         {
             get { return surname; }
@@ -86,7 +91,6 @@ namespace lab2
         public Student(
             string Asurname, string Aname, string Amiddlename, int Abirthday, string Aaddress, long Aphone, string Afaculty, int Acourse, int Agroup)
         {
-            id=GetHashCode();
             surname = Asurname;
             name = Aname;
             middlename = Amiddlename;
@@ -96,12 +100,12 @@ namespace lab2
             faculty = Afaculty;
             course = Acourse;
             group = Agroup;
+            id=GetHashCode();
             count++;
         }
         //Неполный конструктор
         public Student(string Asurname, string Aname, int Abirthday, string Afaculty, int Acourse, int Agroup)
         {
-            id = GetHashCode();
             surname = Asurname;
             name = Aname;
             middlename = "Unknown";
@@ -111,11 +115,11 @@ namespace lab2
             faculty = Afaculty;
             course = Acourse;
             group = Agroup;
+            id = GetHashCode();
             count++;
         }
         //Конструктор по умолчанию
         public Student() {
-            id = GetHashCode();
             surname = "Unknown";
             name = "Unknown";
             middlename = "Unknown";
@@ -125,24 +129,20 @@ namespace lab2
             faculty = "Unknown";
             course = 0;
             group = 0;
+            id = GetHashCode();
             count++;
         }
         static Student()
         {
-            Console.WriteLine(" Кол-во студентов: " + count);
-        }
-        //Закрытый конструктор
-        /* private Student()           
-         {
-             count++;
-             Console.WriteLine("Будущая запись");
-         }*/
+            count = 0;
+
+    }
 
         //поле- константу
         public const string city = "Minsk";
         //----------------------------------
         //метод для вывода информации
-         public void GetInfo()
+        public void GetInfo()
         {
             Console.WriteLine("ID: " + id);
             Console.WriteLine("Фамилия: " + surname);
@@ -162,10 +162,15 @@ namespace lab2
             int age = 2022 - birthday;
             return age;
         }
-        public override int GetHashCode()   
          //расчет уникального номера
+        private int GetHashCode()   
         {
-            return (Birthday + Group) / 2;
+            var hash = 0;
+            foreach (char temp in name)
+            {
+                hash += Convert.ToInt32(temp);
+            }
+            return Convert.ToInt32(hash);
         }
     }
 }
@@ -183,6 +188,7 @@ class Class1
         Console.WriteLine("Кол-во студентов: " + Student.count);
 /*        student[0].GetInfo();*/
         int ageStudent1 = student[1].Birthday;
+        
         int age = student[0].Age(ref ageStudent1);
         Console.WriteLine("Возраст первого студента: " + age);
         
