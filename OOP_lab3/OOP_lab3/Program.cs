@@ -1,122 +1,61 @@
-﻿using System;
+﻿using Lab_3;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lab_4
+namespace OOP_lab3
 {
-
-    public class Massiv
+    class Program
     {
-        public int[] massiv;
-        private int index;
-        public int Index    //свойство класса
+        static void Main(string[] args)
         {
-            get { return index; }
-        }
-        public Massiv(int Index)        //конструктор класса
-        {
-            index = Index;
-            massiv = new int[Index];
-        }
-        public int this[int NumOfElement]   //индексатор класса
-        {
-            get { return massiv[NumOfElement]; }
-            set { massiv[NumOfElement] = value; }
-        }
-        //перегрузка операторов 
-        public static Massiv operator *(Massiv x, Massiv y)     //* - умножение массивов
-        {
-            Massiv temp = new Massiv(x.Index);
-            for (int i = 0; i < temp.Index; i++)
-                temp[i] = x[i] * y[i];
-            return temp;
-        }
-        public static Massiv operator >(Massiv x, Massiv y)     //> - сравнение массивов
-        {
-            Massiv temp = new Massiv(x.Index);
-            for (int i = 0; i < temp.Index; i++)
-                if (x[i] > y[i])
-                    temp[i] = x[i];
-                else
-                    temp[i] = y[i];
-            return temp;
-        }
-        public static Massiv operator <(Massiv x, Massiv y)     //< - сравнение массивов
-        {
-            Massiv temp = new Massiv(x.Index);
-            for (int i = 0; i < temp.Index; i++)
-                if (x[i] < y[i])
-                    temp[i] = x[i];
-                else
-                    temp[i] = y[i];
-            return temp;
-        }
-        public static Massiv operator ==(Massiv x, Massiv y)     //== - сравнение массивов +
-        {
-            Massiv temp = new Massiv(x.Index);
-            for (int i = 0; i < temp.Index; i++)
-                if (x[i] == y[i])
-                    temp[i] = 1;
-                else
-                    temp[i] = 0;
-            return temp;
-        }
-        public static Massiv operator !=(Massiv x, Massiv y)     //== - сравнение массивов -
-        {
-            Massiv temp = new Massiv(x.Index);
-            for (int i = 0; i < temp.Index; i++)
-                if (x[i] != y[i])
-                    temp[i] = 1;
-                else
-                    temp[i] = 0;
-            return temp;
-        }
-        public static bool operator true(Massiv x)     //проверка на отрицательный элемент 
-        {
-            bool flag = false; ;
-            for (int i = 0; i < x.Index; i++)
+            Massiv arr1 = new Massiv(5);
+            arr1[0] = 5;
+            arr1[1] = 5;
+            arr1[2] = 7;
+            arr1[3] = 1;
+            arr1[4] = 500;
+
+            Massiv arr2 = new Massiv(5);
+            arr2[0] = 4;
+            arr2[1] = 9;
+            arr2[2] = -7;
+            arr2[3] = 12;
+            arr2[4] = -2;
+          
+            //перегрузка
+            Massiv arr3 = arr2 * arr1;
+            Console.WriteLine("1)Перегрузка оператора * - умножение массивов");
+            arr3.Show();
+            
+           if(arr1)
             {
-                if (x[i] > 0)
-                    flag = true;
+                Console.WriteLine("2)Массив arr1 вернул true");
             }
-            return flag;
-        }
-        public static bool operator false(Massiv x)     //проверка на положительный элемент 
-        {
-            bool flag = false; ;
-            for (int i = 0; i < x.Index; i++)
+            else
             {
-                if (x[i] < 0)
-                    flag = false;
+                Console.WriteLine("2)Массив arr1 вернул false");
             }
-            return flag;
-        }
-        public static explicit operator int(Massiv x) //int() - операция приведения – - возвращает размер массива;
-        {
-            int count=0;
-            for (int i = 0; i < x.Index; i++) 
-                {
-                count++;
-                }
-                return count;
-        }
-        public void Search(char symbol)    //поиск элемента по символу
-        {
-            for (int i = 0; i < Index; i++)
+            Console.WriteLine("3)Перегрузка оператора int() -операция приведения – - возвращает размер массива arr1: " + (int)arr1);
+            if (arr1 == arr2)
             {
-                if (massiv[i] == symbol)
-                    Console.WriteLine("Элемент найден:", i," ", massiv[i]);
+                Console.WriteLine("4)Перегрузка оператора == - проверка на равенство: arr1==arr2");
             }
-        }
-        public void DeleteMinus()    //удаление отрицательных элементов
-        {
-            for (int i = 0; i < Index; i++)
+            else {
+                Console.WriteLine("4)Перегрузка оператора == - проверка на равенство: arr1!=arr2");
+            }
+            if (arr1 > arr2)
             {
-                if (massiv[i] < 0)
-                    massiv[i] = massiv[i + 1];
+                Console.WriteLine("5)Перегрузка оператора < - сравнение: arr1>arr2");
             }
+            else
+            {
+                Console.WriteLine("5)Перегрузка оператора < - сравнение: arr1<arr2");
+            }
+
         }
+        
     }
 }
