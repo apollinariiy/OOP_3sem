@@ -12,6 +12,7 @@ namespace Lab_3
     {
         public int[] massiv;
         private int index;
+        public string str;
         public int Index    //свойство класса
         {
             get { return index; }
@@ -106,22 +107,7 @@ namespace Lab_3
             }
             return count;
         }
-        public void Search(char symbol)    //поиск элемента по символу
-        {
-            for (int i = 0; i < Index; i++)
-            {
-                if (massiv[i] == symbol)
-                    Console.WriteLine("Элемент найден:", i, " ", massiv[i]);
-            }
-        }
-        public void DeleteMinus()    //удаление отрицательных элементов
-        {
-            for (int i = 0; i < Index; i++)
-            {
-                if (massiv[i] < 0)
-                    massiv[i] = massiv[i + 1];
-            }
-        }
+
         public void Show()//вывод массива
         {
             for (int i = 0; i < massiv.Length; i++)
@@ -129,9 +115,17 @@ namespace Lab_3
                 Console.WriteLine(massiv[i] + " ");
             }
         }
-        public void enterData(params int[] ArrayData)
+        public class Date
         {
-            this.massiv = ArrayData;
+            public DateTime time;
+            public Date()
+            {
+                this.time = DateTime.Now;
+            }
+            public void showDate()
+            {
+                Console.WriteLine("Дата создания: " + time);
+            }
         }
 
     }
