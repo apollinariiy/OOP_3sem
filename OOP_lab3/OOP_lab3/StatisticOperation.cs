@@ -79,22 +79,6 @@ namespace OOP_lab3
                 }
             }
             return newArr;
-            /*Massiv newArr = new Massiv(array.size());
-            for (int i = 0; i < array.massiv.Length; i++)
-            {
-                if (array.massiv[i] > 0)
-                {
-                    if (i > 0 && newArr.massiv[i - 1] == array.massiv[i]) { }
-                    else
-                        newArr.massiv[i] = array.massiv[i];
-                }
-                else if (array.massiv[i] < 0)
-                {
-                    newArr.massiv[i] = array.massiv[i + 1];
-                    
-                }
-            }
-            return newArr;*/
         }
 
         public static void Symbol(this Massiv array, string c)

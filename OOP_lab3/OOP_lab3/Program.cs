@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Lab_3.Massiv;
 
 namespace OOP_lab3
 {
@@ -77,9 +78,13 @@ namespace OOP_lab3
             Console.WriteLine("Delta:" + arr1.delta());
             Console.WriteLine("Size:" + arr1.size());
 
-            Console.WriteLine("Date, Owner:");
-            Owner ownerArr = new Owner(1, "Polina", "QWE");
+            Console.WriteLine("Date, Developer, Organization:");
+            Developer ownerArr = new Developer(1, "Polina", "Developer");
             ownerArr.Show();
+
+            Production prodArr = new Production(2, "LABA");
+            prodArr.Show();
+
             Massiv.Date date = new Massiv.Date();
             date.showDate();
         }

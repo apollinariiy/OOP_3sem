@@ -13,6 +13,7 @@ namespace Lab_3
         public int[] massiv;
         private int index;
         public string str;
+       /* public Developer developer;*/
         public int Index    //свойство класса
         {
             get { return index; }
@@ -125,6 +126,40 @@ namespace Lab_3
             public void showDate()
             {
                 Console.WriteLine("Дата создания: " + time);
+            }
+        }
+         public class Developer
+        {
+            public int id;
+            public string name;
+            public string department;
+            public Developer(int id, string name, string department)
+            {
+                this.id = id;
+                this.name = name;
+                this.department = department;
+            }
+            public void Show()
+            {
+                Console.WriteLine("ID: " + id);
+                Console.WriteLine("Name: " + name);
+                Console.WriteLine("Department: " + department);
+            }
+        }
+
+        public class Production
+        {
+            public int id;
+            public string nameOrganization;
+            public Production(int id, string nameOrganization)
+            {
+                this.id = id;
+                this.nameOrganization = nameOrganization;
+            }
+            public void Show()
+            {
+                Console.WriteLine("ID Organization: " + id);
+                Console.WriteLine("Name Organization: " + nameOrganization);
             }
         }
 
