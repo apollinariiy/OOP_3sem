@@ -1,0 +1,15 @@
+D:\3sem\ООП\лабы\лр1\OOP_3sem\OOP_lab4\OOP_lab4\obj\Debug\net6.0\OOP_lab4.csproj.AssemblyReference.cache
+D:\3sem\ООП\лабы\лр1\OOP_3sem\OOP_lab4\OOP_lab4\obj\Debug\net6.0\OOP_lab4.GeneratedMSBuildEditorConfig.editorconfig
+D:\3sem\ООП\лабы\лр1\OOP_3sem\OOP_lab4\OOP_lab4\obj\Debug\net6.0\OOP_lab4.AssemblyInfoInputs.cache
+D:\3sem\ООП\лабы\лр1\OOP_3sem\OOP_lab4\OOP_lab4\obj\Debug\net6.0\OOP_lab4.AssemblyInfo.cs
+D:\3sem\ООП\лабы\лр1\OOP_3sem\OOP_lab4\OOP_lab4\obj\Debug\net6.0\OOP_lab4.csproj.CoreCompileInputs.cache
+D:\3sem\ООП\лабы\лр1\OOP_3sem\OOP_lab4\OOP_lab4\bin\Debug\net6.0\OOP_lab4.exe
+D:\3sem\ООП\лабы\лр1\OOP_3sem\OOP_lab4\OOP_lab4\bin\Debug\net6.0\OOP_lab4.deps.json
+D:\3sem\ООП\лабы\лр1\OOP_3sem\OOP_lab4\OOP_lab4\bin\Debug\net6.0\OOP_lab4.runtimeconfig.json
+D:\3sem\ООП\лабы\лр1\OOP_3sem\OOP_lab4\OOP_lab4\bin\Debug\net6.0\OOP_lab4.dll
+D:\3sem\ООП\лабы\лр1\OOP_3sem\OOP_lab4\OOP_lab4\bin\Debug\net6.0\OOP_lab4.pdb
+D:\3sem\ООП\лабы\лр1\OOP_3sem\OOP_lab4\OOP_lab4\obj\Debug\net6.0\OOP_lab4.dll
+D:\3sem\ООП\лабы\лр1\OOP_3sem\OOP_lab4\OOP_lab4\obj\Debug\net6.0\refint\OOP_lab4.dll
+D:\3sem\ООП\лабы\лр1\OOP_3sem\OOP_lab4\OOP_lab4\obj\Debug\net6.0\OOP_lab4.pdb
+D:\3sem\ООП\лабы\лр1\OOP_3sem\OOP_lab4\OOP_lab4\obj\Debug\net6.0\OOP_lab4.genruntimeconfig.cache
+D:\3sem\ООП\лабы\лр1\OOP_3sem\OOP_lab4\OOP_lab4\obj\Debug\net6.0\ref\OOP_lab4.dll
