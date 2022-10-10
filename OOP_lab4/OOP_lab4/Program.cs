@@ -17,6 +17,7 @@ namespace Lab_4
             Car ccar = new Car("Audi", "Car");
             Motor motor = new Motor("BMW", "Car", "1000");
             Human human1 = new Human("Mers", "Car", "Лицензия", "Человек","Петя");
+            Human human2 = new Human("Mers", "Car", "Лицензия", "Человек", "Катя");
 
             human1.ToString();
             //is
