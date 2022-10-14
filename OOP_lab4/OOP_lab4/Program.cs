@@ -1,7 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Diagnostics;
 using System.Linq;
+using System.Reflection;
+using System.Runtime.ConstrainedExecution;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
@@ -15,13 +19,16 @@ namespace Lab_4
 
             Car car = new Car("BMW", "Car");
             Car ccar = new Car("Audi", "Car");
-            Motor motor = new Motor("BMW", "Car", "1000");
-            Human human1 = new Human("Mers", "Car", "Лицензия", "Человек","Петя");
-            Human human2 = new Human("Mers", "Car", "Лицензия", "Человек", "Катя");
-
-            human1.ToString();
-            //is
-            object Is = new Human("Audi", "Car", "Лицензия", "Человек", "Вася");
+            Motor motor = new Motor("BMW", "легковая", 1000);
+            Human human1 = new Human("Mers", "Грузовая","Человек", "Петя", 234567);
+            Human human2 = new Human("Грузовая", "Mers", "Человек", "Андрей", 348791);
+            car.ToString();
+            motor.ToString();
+            human2.ToString();
+            
+            
+            //IS
+            object Is = new Human("грузовая", "Mers", "Человек", "Андрей", 348791);
             if (Is is Human)
             {
                 Console.WriteLine("Объект принадлежит классу Human");
@@ -30,24 +37,27 @@ namespace Lab_4
             {
                 Console.WriteLine("Объект не принадлежит классу Human");
             }
-            //as
+            //AS
             Trans As = car as Trans;
             if (As == null) Console.WriteLine("Преобразование прошло не успешно.");
             else As.ToString();
 
-            ICloneable user1 = new User();
-            user1.DoClone();
-            BaseClone user2 = new User();
-            user2.DoClone(false);
-
-            if (car.Equals(ccar))
+         
+            //EQUALS
+            if (human1.Equals(human2))
                 Console.WriteLine("\nМашины идентичны\n");
             else Console.WriteLine("\nМашины не идентичны\n");
-
-            Printer print = new Printer();
-            Console.WriteLine(print.IAmPrinting(car));
-            Console.WriteLine(print.IAmPrinting(human1));
+            
+            //PRINTER
+            Vehicle[] tech1 = { car, motor, human1 };  // массив, содержащий ссылки на разнотипные объекты классов
+            Printer printer = new Printer();                        // создание объекта класса Printer
+            foreach (var item in tech1)
+            {
+                Console.Write("Тип объекта: ");
+                printer.IAmPrinting(item);
+            }
+            Console.ReadKey();
         }
-        
+
     }
 }
