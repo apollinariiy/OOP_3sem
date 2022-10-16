@@ -127,7 +127,7 @@ namespace OOP_lab5
         public override void ToString()
         {
             Console.WriteLine("Name Human: " + Name);
-            Console.WriteLine("Year: " + Year);
+            Console.WriteLine("Year: " + Date.Year);
         }
 
         //методы от обжект
@@ -176,7 +176,7 @@ namespace OOP_lab5
         public override void ToString()
         {
             Console.WriteLine("Name: " + Name);
-            Console.WriteLine("Year: " + Year);
+            Console.WriteLine("Year: " + Date.Year);
             Console.WriteLine("Power: " + Power);
         }
         void IDo.DoClone()

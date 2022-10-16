@@ -43,40 +43,46 @@ namespace OOP_lab5
         {
             foreach (Intelligent item in Armiya)
             {
-                Console.WriteLine("Армия:");
+                Console.WriteLine("Единица армии:");
                 item.ToString();
                 Console.WriteLine("-------------------------");
             }
         }
         public class ArmyController : ArmyContainer
         {
-            public void SearchDate(Date date)
-            {
-                int flagSearch = 0;
-                Console.WriteLine("\nПоиск даты...", date.Year);
-                foreach (Intelligent item in Armiya)
-                {
-                    if (item.Date.Equals(date))
-                    {
-                        Console.WriteLine("Дату рождения имеет", date.Year, item.Name);
-                        flagSearch++;
-                    }
-                    else if (flagSearch != 0)
-                        Console.WriteLine("Дата не найдена.");
-                }
-            }
             public int Count()
             {
                 Console.WriteLine("\nКол-во единиц армии: " + Armiya.Count);
                 return Armiya.Count;
             }
+            public void SearchDate(Date date)
+            {
+                int flagSearch = 0;
+                Console.WriteLine("\nПоиск даты...   " + date.Year);
+                for (int i = 0; i < Armiya.Count; i++)
+                {
+                    if (Armiya[i] is Human)
+                    {
+                        if (Armiya[i].Date.Year == date.Year)
+                        {
+                            Console.WriteLine("Найден объект с датой "+ date.Year +": "+ Armiya[i].Name);
+                            flagSearch = 1;
+                        }
+                    }
+                }
+            }
             public void SearchPower(int power)
             {
+                Console.WriteLine("\nПоиск мощности...   " + power);
                 for (int i = 0; i < Armiya.Count; i++)
                 {
                     if (Armiya[i] is Trans)
                     {
-                        Console.WriteLine("\nМощность " + power + " имеет " + Armiya[i].Name);
+                        Trans temp = Armiya[i] as Trans;
+                        if (temp.Power == power)
+                        {
+                            Console.WriteLine("Найден объект с мощностью " + power + ": " + Armiya[i].Name);
+                        }
                     }
                 }
             }
