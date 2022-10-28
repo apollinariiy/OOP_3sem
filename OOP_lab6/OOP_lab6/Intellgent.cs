@@ -1,4 +1,5 @@
 ﻿using OOP_lab6;
+using OOP_Lab6;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,6 +26,8 @@ namespace OOP_lab6
         public Intelligent(string name)
         {
             this.Name = name;
+            if (name.Length < 3 || name.Length > 20)
+                throw new NameException("Ошибка! Неккоректно введено имя:", name);
             number++;
         }
 
@@ -92,6 +95,8 @@ namespace OOP_lab6
         {
             Date = date;
             power = Power;
+            if (power < 0 || power > 9999)
+                throw new PowerException("Ошибка! Некорректно введена мощность:", power);
             number++;
         }
         public override void ToString()

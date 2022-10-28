@@ -82,6 +82,8 @@ namespace OOP_lab6
             }
             public void SearchPower(int power)
             {
+                if (power > 9999 || power < 0)
+                    throw new SearchPowerException("Ошибка! Неверно введена мощность для поиска:", power);
                 Console.WriteLine("\nПоиск мощности...   " + power);
                 for (int i = 0; i < Armiya.Count; i++)
                 {
