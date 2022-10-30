@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.IO;
+using System.Linq.Expressions;
 
 namespace OOP_Lab6
 {
@@ -102,7 +103,7 @@ namespace OOP_Lab6
             Console.WriteLine("\n" + DateTime.Now);
             if (DateEx != null)
             {
-                Console.WriteLine("{0}{1} {2}", DateEx.ErrorClass, DateEx.Message, DateEx.Year); ;
+                Console.WriteLine("{0}{1} {2}", DateEx.ErrorClass, DateEx.Message, DateEx.Year); 
             }
             if (PowerEx != null)
             {
@@ -118,4 +119,49 @@ namespace OOP_Lab6
             }
         }
     }
+    public class Num
+    {
+        public int num { get; set; }
+        public Num(int num)
+        {
+            this.num = num;
+        }
+        public Num Namnamnam()
+        {
+            try
+            {
+                if (!(this.num is int))
+                {
+                    throw new MyException("Uncorrect type", "Error code 5: Uncorrect type.\n");
+                }
+
+                return this;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
+        public int Omnomnom()
+        {
+            try
+            {
+                if ((Convert.ToInt32(this.Namnamnam()) is int))
+                {
+                    return Convert.ToInt32(this.Namnamnam());
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message + "impossible convert to int\n");
+                return 0;
+            }
+        }
+    }
+    
 }

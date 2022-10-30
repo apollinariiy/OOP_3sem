@@ -9,6 +9,9 @@ namespace OOP_Lab6
     {
         static void Main()
         {
+            Num check = new Num(10);
+            check.Omnomnom();
+
             FileLogger fileLogger = new FileLogger();
             ConsoleLogger consoleLogger = new ConsoleLogger();
             try
@@ -32,9 +35,12 @@ namespace OOP_Lab6
             catch (MyException ex)
             {
                 fileLogger.WriteLog(ex);
-                consoleLogger.WriteLog(ex);
+               
             }
-            finally { }
+            finally {
+                Console.WriteLine("Программа завершена");
+            }
+        
             
             
             /// Деление на 0
@@ -47,18 +53,24 @@ namespace OOP_Lab6
             {
                 Console.WriteLine(e.Message + "\n");
             }
-
-
-            /// Выход за границы массива
+            
             try
             {
+
                 int[] arr = new int[8];
                 arr[10] = 10;
             }
-            catch (Exception e)
+            catch (Exception e) when (e.Source.Length < 8)
+            {
+                Console.WriteLine("ок\n");
+            }
+            catch (Exception e) 
             {
                 Console.WriteLine(e.Message + "\n");
+               
             }
+            
+           
         }
     }
 }
