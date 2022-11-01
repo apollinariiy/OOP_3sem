@@ -32,7 +32,7 @@ namespace OOP_lab7
     }
 
 
-    public class Car : Vehicle
+    public class Car
     {
         private string nameCar;
         public string NameCar
@@ -40,59 +40,26 @@ namespace OOP_lab7
             get { return nameCar; }
             set { nameCar = value; }
         }
-
-        public Car(string nameCar, string typeVehicle) : base(typeVehicle)
-        {
-            this.NameCar = nameCar;
-        }
-
-        public override void ToString()
-        {
-            Console.WriteLine("Name Car: " + NameCar);
-            Console.WriteLine("Type Vehicle: " + TypeVehicle);
-        }
-    }
-
-    public class Motor : Car
-    {
         private int power;
         public int Power
         {
             get { return power; }
             set { power = value; }
         }
-        public Motor(string nameCar, string typeVehicle, int power) : base(nameCar, typeVehicle)
+        public Car(string nameCar, int power)
         {
-            this.Power = power;
+            this.NameCar = nameCar;
+            this.power = power;
+
         }
-        public override void ToString()
+
+        public override string ToString()
         {
-            Console.WriteLine("Name Car: " + NameCar);
-            Console.WriteLine("Type Vehicle: " + TypeVehicle);
-            Console.WriteLine("Power: " + Power);
+            return "\nНазвание машины: " + nameCar + "\nМощность двигателя: " + Power;
         }
     }
 
-    public class carManagement : Car
-    {
 
-        private int license;
-        public int License
-        {
-            get { return license; }
-            set { license = value; }
-        }
-        public carManagement(string nameCar, string typeVehicle, int license) : base(nameCar, typeVehicle)
-        {
-            this.License = license;
-        }
-        public override void ToString()
-        {
-            Console.WriteLine("Name Car: " + NameCar);
-            Console.WriteLine("Type Vehicle: " + TypeVehicle);
-            Console.WriteLine("License: " + License);
-        }
-    }
     public class Printer
     {
         public virtual void IAmPrinting(Vehicle tech)

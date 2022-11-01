@@ -1,4 +1,5 @@
 ﻿using OOP_lab7;
+
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -26,9 +27,9 @@ namespace OOP_Lab7
                 CollectionType<string> strCollection2 = new CollectionType<string>();
                 CollectionType<string> strCollectionOut = new CollectionType<string>();
 
-                CollectionType<Trans> carCollection = new CollectionType<Trans>();
-                CollectionType<Trans> carCollection2 = new CollectionType<Trans>();
-                CollectionType<Trans> carCollectionOut = new CollectionType<Trans>();
+                CollectionType<Car> carCollection = new CollectionType<Car>();
+                CollectionType<Car> carCollection2 = new CollectionType<Car>();
+                CollectionType<Car> carCollectionOut = new CollectionType<Car>();
 
 
                 // ===================  Чтение из файла ====================
@@ -46,23 +47,21 @@ namespace OOP_Lab7
 
 
                 // ==============  Создание объектов и списков  ==============
-
-                Trans trans1 = new Trans("YU2345", new Date(2022), 8700);
-                Trans trans2 = new Trans("Y23232", new Date(2022), 8710);
-                Trans trans3 = new Trans("Y23232", new Date(2022), 800);
-                Trans trans4 = new Trans("Y23232", new Date(2022), 90);
-
-
+                Car car1 = new Car("Toyota Supra", 680);
+                Car car2 = new Car("Nissan 240-SX", 680);
+                Car car3 = new Car("Mitsubishi Lancer Evo", 680);
+                Car car4 = new Car("Nissan 350Z", 680);
 
 
                 List<int> listInt = new List<int>() { int1[0], int1[1], int1[2] };
                 List<int> listInt2 = new List<int>() { int2[0], int2[1], int2[2] };
                 List<string> listStr = new List<string>() { str1[0], str1[1], str1[2] };
                 List<string> listStr2 = new List<string>() { str2[0], str2[1], str2[2] };
-                List<Trans> carList = new List<Trans>() { trans1, trans2 };
-                List<Trans> carList2 = new List<Trans>() { trans3, trans4 };
+                List<Car> carList = new List<Car>() { car1, car2 };
+                List<Car> carList2 = new List<Car>() { car3, car4 };
 
 
+ 
                 // ==================  Вывод коллекций ===================
                 Console.WriteLine("\n=============  Коллекции  =============\n");
                 intCollection.enterData(listInt);
@@ -83,6 +82,7 @@ namespace OOP_Lab7
                 carCollection2.enterData(carList2);
                 Console.WriteLine("Коллекция Car #2:");
                 carCollection2.printData();
+                
 
 
                 // ===================  Перегрузки ===================
@@ -93,6 +93,7 @@ namespace OOP_Lab7
                 strCollectionOut.printData();
                 carCollectionOut = carCollection * carCollection2;
                 carCollectionOut.printData();
+               
 
 
                 Console.WriteLine("\n\n============  Перегрузка >  ============\n");
