@@ -3,19 +3,22 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace OOP_lab7
-{//Создайте обобщенный интерфейс с операциями добавить, удалить, просмотреть.
-    public interface ICollection<T>
+{//Создайте обобщенный интерфейс с операциями добавить, удалить, просмотреть.where T : IComparable<T>
+    public interface ICollection<T> where T:Car
     {
         public void enterData(List<T> list);
         public void addData(T element);
         public void printData();
         public void deleteData(T element);
+        public void searchIndex(int index);
     }
-    public class CollectionType<T> : ICollection<T>
+   
+    public class CollectionType<T> /*where T : Car*/
     {
         public List<T> list { get; set; }
         public CollectionType()
@@ -42,6 +45,14 @@ namespace OOP_lab7
         {
             list.Remove(deleteEl);
         }
+
+        public void searchIndex(int index)
+        {
+           list[index].ToString();
+        }
+    
+        
+       
 
 
         //ПЕРЕГРУЗКИ
@@ -184,6 +195,7 @@ namespace OOP_lab7
             }
             return false;
         }
+        /// ///////////////////////////
         public static bool operator ==(CollectionType<T> c1, CollectionType<T> c2)
         {
             if(c1.list is List<int> || c1.list is List<string>)
@@ -234,6 +246,7 @@ namespace OOP_lab7
             }
             return false;
         }
+        /// /////////////////////
         public static bool operator true(CollectionType<T> c1)
         {
 

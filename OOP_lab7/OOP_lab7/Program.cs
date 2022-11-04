@@ -2,7 +2,11 @@
 
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Runtime.CompilerServices;
+using System.Text;
+
 
 namespace OOP_Lab7
 {
@@ -10,10 +14,13 @@ namespace OOP_Lab7
     {
         static void Main(string[] args)
         {
-
+            
             // =======  Создание экземпляров обработчиков ошибок в файле и в консоли  ========
             FileLogger fileLogger = new FileLogger();
             ConsoleLogger consoleLogger = new ConsoleLogger();
+            FileWriter<Car> filewrite = new FileWriter<Car>();
+            ReadFile read = new ReadFile();
+
 
 
             try
@@ -31,9 +38,11 @@ namespace OOP_Lab7
                 CollectionType<Car> carCollection2 = new CollectionType<Car>();
                 CollectionType<Car> carCollectionOut = new CollectionType<Car>();
 
+     
 
                 // ===================  Чтение из файла ====================
                 string[] lines = File.ReadAllLines(@"D:\3sem\ООП\лабы\лр1\OOP_3sem\OOP_lab7\OOP_lab7\in.txt");
+                CollectionType<int> Coll = new CollectionType<int>();
                 string[] strInt1 = lines[0].Split(' ');
                 string[] strInt2 = lines[1].Split(' ');
                 string[] str1 = lines[2].Split(' ');
@@ -47,10 +56,10 @@ namespace OOP_Lab7
 
 
                 // ==============  Создание объектов и списков  ==============
-                Car car1 = new Car("Toyota Supra", 680);
-                Car car2 = new Car("Nissan 240-SX", 680);
-                Car car3 = new Car("Mitsubishi Lancer Evo", 680);
-                Car car4 = new Car("Nissan 350Z", 680);
+                Car car1 = new Car("Toyota", 700);
+                Car car2 = new Car("Nissan", 600);
+                Car car3 = new Car("Mers", 810);
+                Car car4 = new Car("BMW", 300);
 
 
                 List<int> listInt = new List<int>() { int1[0], int1[1], int1[2] };
@@ -59,8 +68,6 @@ namespace OOP_Lab7
                 List<string> listStr2 = new List<string>() { str2[0], str2[1], str2[2] };
                 List<Car> carList = new List<Car>() { car1, car2 };
                 List<Car> carList2 = new List<Car>() { car3, car4 };
-
-
  
                 // ==================  Вывод коллекций ===================
                 Console.WriteLine("\n=============  Коллекции  =============\n");
@@ -82,8 +89,8 @@ namespace OOP_Lab7
                 carCollection2.enterData(carList2);
                 Console.WriteLine("Коллекция Car #2:");
                 carCollection2.printData();
-                
 
+                carCollection.searchIndex(1);
 
                 // ===================  Перегрузки ===================
                 Console.WriteLine("\n\n\n============  Перегрузка *  ============");
@@ -93,8 +100,8 @@ namespace OOP_Lab7
                 strCollectionOut.printData();
                 carCollectionOut = carCollection * carCollection2;
                 carCollectionOut.printData();
-               
 
+                
 
                 Console.WriteLine("\n\n============  Перегрузка >  ============\n");
                 if (intCollection > intCollection2)
@@ -128,13 +135,19 @@ namespace OOP_Lab7
                 if (carCollection == carCollection2) Console.WriteLine("Коллекции Car равны");
                 else Console.WriteLine("Коллекции Car не равны");
                 Console.WriteLine("\n");
+
+
+                // ===================  Чтение и запись в файл ===================
+                filewrite.WriteLog(carCollection.list);
+                read.LoadFromFile();
             }
 
-
+        
             // ==========  Отлавливание ошибок через логгер в консоль и в файл  ============
             catch (MyException ex)
             {
                 consoleLogger.WriteLog(ex);
+                fileLogger.WriteLog(ex);
             }
             finally { }
         }

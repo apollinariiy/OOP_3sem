@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OOP_Lab7;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -47,7 +48,10 @@ namespace OOP_lab7
             set { power = value; }
         }
         public Car(string nameCar, int power)
+
         {
+            if (nameCar.Length < 2) throw new NameException("Оишбка! Неверно введено название:", nameCar);
+            if (power < 0) throw new PowerException("Ошибка! Неверно введена мощность:", power);
             this.NameCar = nameCar;
             this.power = power;
 
