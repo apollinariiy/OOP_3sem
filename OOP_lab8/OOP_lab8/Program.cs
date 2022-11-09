@@ -16,7 +16,7 @@ namespace OOP_lab8
             
             Console.WriteLine("\n--------------------------Cобытия--------------------------\n");
 
-
+            
             //объект подписан на два события
             worker2.increase += message => Console.WriteLine(message); //Установка в качестве обработчика лямбда-выражения
             worker2.fine += message => Console.WriteLine(message);
@@ -47,10 +47,75 @@ namespace OOP_lab8
             worker4.ToString();
             Console.ReadKey();
 
-/*            void DisplayMessage(string message) => Console.WriteLine(message);//обработчик*/
-           
+            /*            void DisplayMessage(string message) => Console.WriteLine(message);//обработчик*/
 
 
+            Console.WriteLine("\n--------------------------Обработка строки--------------------------\n");
+
+            Func<string, string> test1;  //обобщенный делегат, второй параметр - возврат 
+            Action<string> test2;       //не возвр значений
+            Func<string, string> test3;
+            Func<string, string> test4;
+            Func<string, string> test5;
+
+            //удаление знаков препинания
+            test1 = str1 =>
+            {
+                char[] sign = { '.', ',', '!', '?', '-', ':' };
+                for (int i = 0; i < str1.Length; i++)
+                {
+                    if (sign.Contains(str1[i]))
+                    {
+                        str1 = str1.Remove(i, 1);
+                    }
+                }
+                Console.WriteLine(str1);
+                return str1;
+
+            };
+
+            //добавление
+            test2 = delegate (string str2)   //анонимный метод
+            {
+                str2 += " World";
+                Console.WriteLine(str2);
+            };
+
+            //удаление пробелов
+            test3 = str3 =>
+            {
+                str3 = str3.Replace(" ", string.Empty);
+                Console.WriteLine(str3);
+                return str3;
+            };
+
+            //перевод в верхний регистр
+            test4 = str4 =>
+            {
+                str4 = str4.ToUpper();
+                Console.WriteLine(str4);
+                return str4;
+            };
+            //перевод в нижний регистр
+            test5 = str5 =>
+            {
+                str5 = str5.ToLower();
+                Console.WriteLine(str5);
+                return str5;
+            };
+
+            string str = "Hel?lo! Wor?ld";
+            Console.WriteLine("Строка в начале: " + str);
+            Console.WriteLine("Строки в конце: ");
+            string s1, s2, s3;
+            s1 = StringWork.RemoveS(str, test1);
+            StringWork.AddToString(s1, test2);
+            s2 = StringWork.RemoveSpaces(s1, test3);
+            s3 = StringWork.Upper(s2, test4);
+            StringWork.Lower(s3, test5);
+        
+ 
+            
         }
     }
 }

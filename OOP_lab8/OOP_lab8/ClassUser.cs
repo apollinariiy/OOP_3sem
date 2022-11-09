@@ -8,10 +8,8 @@ namespace OOP_lab8
 {
 
     public delegate void Fine(string message);
-    /* public event Fine fine;*/
+
     public delegate void Increase(string message);
-
-
 
     class Director {
         public int salary;
@@ -52,7 +50,5 @@ namespace OOP_lab8
 
     }
    
-    class kdmkd {
-        
-    }
+   
 }
