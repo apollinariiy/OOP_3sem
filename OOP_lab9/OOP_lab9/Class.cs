@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace OOP_lab9
 {
-    interface IOrderedDictionary
+    interface IOrderedDictionary<T>
     {
-        void Add(int key, Car value); // добавление элемента в коллекцию
+        void Add(int key, T value); // добавление элемента в коллекцию
         void Clear(); // очистка коллекции
-        bool Contains(Car value); // проверка наличия элемента в коллекции
+        bool Contains(T value); // проверка наличия элемента в коллекции
         void Remove(int key); // удаление элемента из коллекции
         int Count { get; } // количество элементов в коллекции
         ICollection Keys { get; } // возвращает список ключей
@@ -32,12 +32,13 @@ namespace OOP_lab9
         }
 
     }
-    public class CarDictionary: IOrderedDictionary
+    public class MyDictionary<T>: IOrderedDictionary<T>
     {
-        public Dictionary<int, Car> list { get; set; }
-        public CarDictionary()
+        public Dictionary<int, T> list { get; set;}
+
+        public MyDictionary()
         {
-            list = new Dictionary<int, Car>();
+            list = new Dictionary<int, T>();
         }
         public int Count => list.Count; // количество элементов в коллекции
         public void Clear()
@@ -46,10 +47,19 @@ namespace OOP_lab9
         }
         public void Print()
         {
-            foreach (KeyValuePair<int, Car> item in list)
-                Console.WriteLine("{0}. {1} – {2}$", item.Key, item.Value.Name, item.Value.Price);
+            foreach (KeyValuePair<int, T> item in list)
+                if (item.Value is Car)
+                {
+                    Car car = item.Value as Car;
+                    Console.WriteLine("{0}. {1} – {2}$", item.Key, car.Name, car.Price);
+                }
+                else
+                {
+                    Console.WriteLine("{0}. {1}", item.Key, item.Value);
+                }
+            
         }
-        public void Add(int key, Car value)
+        public void Add(int key, T value)
         {
             list.Add(key, value);
         }
@@ -57,12 +67,16 @@ namespace OOP_lab9
         {
             list.Remove(key);
         }
-        public bool Contains(Car carSearch)
+        public bool Contains(T carSearch) // проверка наличия элемента в коллекции
         {
-                if(list.FirstOrDefault(x => x.Value == carSearch).Value != null)  { return true; }
+            foreach (KeyValuePair<int, T> item in list)
+            {
+                if (item.Value.Equals(carSearch))
+                    return true;
+            }
             return false;
         }
-      
+       
         public ICollection Keys => list.ToArray();
 
         public ICollection Values => list.ToArray();
