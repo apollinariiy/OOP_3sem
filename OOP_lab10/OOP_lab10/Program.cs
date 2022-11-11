@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OOP_lab10;
+using System;
 using System.Collections;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
@@ -58,7 +59,79 @@ namespace OOP_Lab10
                 Console.WriteLine(m);
             }
 
+            //ЗАДАНИЕ 2
+         
+            List<Student> students = new List<Student>();
 
+            Student stud1 = new Student("Smirnova", "Polina", "Andreevna", 2000, "Belorusskaya Street", 375297778888, "FIT", 3, 5);
+            Student stud2 = new Student("Ivanov", "Ivan", "Ivanovich", 1999, "Pushkina Street", 375297778888, "FIT", 3, 5);
+            Student stud3 = new Student("Petrov", "Petr", "Petrovich", 1998, "Lenina Street", 375297778888, "FIT", 3, 5);
+            Student stud4 = new Student("Sidorov", "Sidor", "Sidorovich", 1997, "Kalinina Street", 375297778888, "FIT", 3, 5);
+            Student stud5 = new Student("Smirnov", "Sergey", "Sergeevich", 1996, "Kirova Street", 375297778888, "FIT", 3, 5);
+            Student stud6 = new Student("Kozlov", "Ivan", "Ivanovich", 1995, "Kalinina Street", 375297778888, "XTIT", 3, 4);
+            Student stud7 = new Student("Kuznetsov", "Petr", "Petrovich", 1994, "Kalinina Street", 375297778888, "XTIT", 3, 4);
+            Student stud8 = new Student("Ivanova", "Polina", "Andreevna", 1993, "Kalinina Street", 375297778888, "XTIT", 3, 4);
+            Student stud9 = new Student("Petrova", "Irina", "Ivanovna", 1992, "Kalinina Street", 375297778888, "XTIT", 3, 4);
+            Student stud10 = new Student("Sidorova", "Svetlana", "Sergeevna", 1991, "Kalinina Street", 375297778888, "XTIT", 3, 4);
+
+            students.Add(stud1);
+            students.Add(stud2);
+            students.Add(stud3);
+            students.Add(stud4);
+            students.Add(stud5);
+            students.Add(stud6);
+            students.Add(stud7);
+            students.Add(stud8);
+            students.Add(stud9);
+            students.Add(stud10);
+            
+            Console.WriteLine("\nCписок студентов заданной специальности по алфавиту(XTIT):");
+            var studentsBySpecialty = from s in students
+                                      where s.Faculty == "XTIT"
+                                      orderby s.Surname
+                                      select s;
+            foreach (var s in studentsBySpecialty)
+            {
+                Console.WriteLine(s.Surname +" "+s.Name);
+            }
+
+            Console.WriteLine("\nCписок заданной учебной группы и факультета(FIT,5):");
+            var studentsByGroup = from s in students
+                                  where s.Faculty == "FIT" && s.Group == 5
+                                  select s;
+            foreach (var s in studentsByGroup)
+            {
+                Console.WriteLine(s.Surname + " " + s.Name);
+            }
+
+            /* Console.WriteLine("\nCамый молодой студент:");
+             var youngestStudent = from s in students
+                                   orderby s.Birthday
+                                   where s.FirstOrDefault
+                                   select s;
+             foreach (var s in youngestStudent)
+             {
+                 Console.WriteLine(s.Surname + " " + s.Name);
+             }*/
+            
+            Console.WriteLine("\nCамый молодой студент:");
+            int minYeras = students.Max(a => a.Birthday);   /// находим минимальное кол-во страниц через лямбда-выражение
+            var result = students.FirstOrDefault(a => a.Birthday == minYeras);/// выбираем только один объект у которого
+                                                                              /// поле совпадает с минимальным значением
+            Console.WriteLine(result.Surname + " " + result.Name);
+
+            
+            Console.WriteLine("\nКоличество студентов заданной группы упорядоченных по фамилии(4):");
+            var studentsByGroupAndSurname = from s in students
+                                            where s.Group == 4
+                                            orderby s.Surname
+                                            select s;
+            var count = studentsByGroupAndSurname.Count();
+            Console.WriteLine(count);
+            foreach (var s in studentsByGroupAndSurname)
+            {
+                Console.WriteLine(s.Surname + " " + s.Name);
+            }
         }
     }
 }
