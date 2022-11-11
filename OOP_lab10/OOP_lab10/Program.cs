@@ -18,6 +18,7 @@ namespace OOP_Lab10
             
         {
             //ЗАДАНИЕ 1
+            Console.WriteLine("-----------------------------ЗАДАНИЕ 1---------------------------------");
             string[] months = { "December", "January", "February", "March", "April", "May", "September", "October", "November", "June", "July", "August", };
 
             Console.WriteLine("Введите n:");
@@ -60,7 +61,8 @@ namespace OOP_Lab10
             }
 
             //ЗАДАНИЕ 2
-         
+            Console.WriteLine("-----------------------------ЗАДАНИЕ 2---------------------------------");
+
             List<Student> students = new List<Student>();
 
             Student stud1 = new Student("Smirnova", "Polina", "Andreevna", 2000, "Belorusskaya Street", 375297778888, "FIT", 3, 5);
@@ -132,6 +134,34 @@ namespace OOP_Lab10
             {
                 Console.WriteLine(s.Surname + " " + s.Name);
             }
+
+            Console.WriteLine("\nПервого студента с заданным именем(Petr):");
+            var studentsByName = from s in students
+                                 where s.Name == "Petr"
+                                 select s;
+
+            foreach (var s in studentsByName.Take(1))
+            {
+                Console.WriteLine(s.Surname + " " + s.Name);
+            }
+
+            //Задание 3
+            Console.WriteLine("-----------------------------ЗАДАНИЕ 3---------------------------------");
+            
+            Console.WriteLine("Введите условия для поиска студентов:");
+            Console.WriteLine("Факультет:");
+            string faculty = Console.ReadLine();
+            var studentsByFaculty = from s in students
+                                    where s.Faculty == faculty//условия(where)-определяет фильтр выборки
+                                    orderby s.Surname//упорядочивания(orderby)-упорядочивает элементы по возрастанию
+                                    select s;//проекций(select)-определяет, какие поля будут включены в результат
+            var count2 = studentsByFaculty.Count();//агрегация(count)-подсчитывает количество элементов коллекции, которые удовлетворяют определенному условию
+            Console.WriteLine("Количество студентов заданного факультета: " + count2);
+            foreach (var s in studentsByFaculty.Take(3)) //разбиение(take)-выбирает определенное количество элементов
+            {
+                Console.WriteLine(s.Surname + " " + s.Name);
+            }
+
         }
     }
 }
