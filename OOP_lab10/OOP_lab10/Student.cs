@@ -181,4 +181,16 @@ namespace OOP_lab10
                 && this.Faculty == stud.Faculty && this.Course == stud.Course && this.Group == stud.Group;
         }
     }
+    public class Car
+    {
+        public string Name { get; set; }
+        public int Price { get; set; }
+
+        public Car(string name, int price)
+        {
+            Name = name;
+            Price = price;
+        }
+
+    }
 }

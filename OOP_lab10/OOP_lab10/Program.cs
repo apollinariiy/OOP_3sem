@@ -162,6 +162,29 @@ namespace OOP_Lab10
                 Console.WriteLine(s.Surname + " " + s.Name);
             }
 
+            //Задание 4
+            Console.WriteLine("-----------------------------ЗАДАНИЕ 4---------------------------------");
+
+            
+            
+            Student stud11 = new Student("Kozlov", "Ivan", 2001, "FIT", 3, 5);
+            Student stud12 = new Student("Popov", "Ivan", 2005, "FIT", 3, 5);
+            Car car1 = new Car("BMW", 2000);
+            Car car2 = new Car("Audi", 1999);
+            
+            List<Car> stud = new List<Car>() { car1, car2 };      /// создаем список с объектами-издательствами
+            var Join = from car in stud
+                       join owner in students on car.Price equals owner.Birthday /// присоединяем свойства с publisher, 
+                                                                                 /// если названия издательства совпадают 
+                                                                                 /// (Name в Publisher и Publisher в Book)
+                       select new { car.Name, owner.Surname }; 
+                                                  /// создаём анонимный тип со свойствами от
+                                                  /// Book (Name) и Publisher (Name, Country)
+            foreach (var item in Join)
+            {
+                Console.WriteLine($"{item.Name} - {item.Surname}");
+            }
+
         }
     }
 }
