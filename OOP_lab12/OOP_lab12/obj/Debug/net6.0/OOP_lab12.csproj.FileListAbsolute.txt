@@ -1,0 +1,15 @@
+D:\3sem\ООП\лабы\лр1\OOP_3sem\OOP_lab12\OOP_lab12\bin\Debug\net6.0\OOP_lab12.exe
+D:\3sem\ООП\лабы\лр1\OOP_3sem\OOP_lab12\OOP_lab12\bin\Debug\net6.0\OOP_lab12.deps.json
+D:\3sem\ООП\лабы\лр1\OOP_3sem\OOP_lab12\OOP_lab12\bin\Debug\net6.0\OOP_lab12.runtimeconfig.json
+D:\3sem\ООП\лабы\лр1\OOP_3sem\OOP_lab12\OOP_lab12\bin\Debug\net6.0\OOP_lab12.dll
+D:\3sem\ООП\лабы\лр1\OOP_3sem\OOP_lab12\OOP_lab12\bin\Debug\net6.0\OOP_lab12.pdb
+D:\3sem\ООП\лабы\лр1\OOP_3sem\OOP_lab12\OOP_lab12\obj\Debug\net6.0\OOP_lab12.csproj.AssemblyReference.cache
+D:\3sem\ООП\лабы\лр1\OOP_3sem\OOP_lab12\OOP_lab12\obj\Debug\net6.0\OOP_lab12.GeneratedMSBuildEditorConfig.editorconfig
+D:\3sem\ООП\лабы\лр1\OOP_3sem\OOP_lab12\OOP_lab12\obj\Debug\net6.0\OOP_lab12.AssemblyInfoInputs.cache
+D:\3sem\ООП\лабы\лр1\OOP_3sem\OOP_lab12\OOP_lab12\obj\Debug\net6.0\OOP_lab12.AssemblyInfo.cs
+D:\3sem\ООП\лабы\лр1\OOP_3sem\OOP_lab12\OOP_lab12\obj\Debug\net6.0\OOP_lab12.csproj.CoreCompileInputs.cache
+D:\3sem\ООП\лабы\лр1\OOP_3sem\OOP_lab12\OOP_lab12\obj\Debug\net6.0\OOP_lab12.dll
+D:\3sem\ООП\лабы\лр1\OOP_3sem\OOP_lab12\OOP_lab12\obj\Debug\net6.0\refint\OOP_lab12.dll
+D:\3sem\ООП\лабы\лр1\OOP_3sem\OOP_lab12\OOP_lab12\obj\Debug\net6.0\OOP_lab12.pdb
+D:\3sem\ООП\лабы\лр1\OOP_3sem\OOP_lab12\OOP_lab12\obj\Debug\net6.0\OOP_lab12.genruntimeconfig.cache
+D:\3sem\ООП\лабы\лр1\OOP_3sem\OOP_lab12\OOP_lab12\obj\Debug\net6.0\ref\OOP_lab12.dll
