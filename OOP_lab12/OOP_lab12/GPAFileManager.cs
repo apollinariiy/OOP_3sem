@@ -116,7 +116,7 @@ namespace OOP_lab12
             try
             {
                 string path4 = path3 + @"\GPAFiles";
-                Console.WriteLine(path4);
+
                
                 DirectoryInfo destDir = new DirectoryInfo(path4);
                 if (destDir.Exists)
