@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<people>
+  <person name="Ваня">
+    <surname>Иванов</surname>
+    <age>37</age>
+  </person>
+  <person name="Вася">
+    <surname>Петров</surname>
+    <age>41</age>
+  </person>
+</people>

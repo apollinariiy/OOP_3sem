@@ -70,6 +70,57 @@ namespace OOP_lab13
             {
                 Console.WriteLine(n.Name); //Name возвращает название узла.
             }
+
+
+            //ЗАДАНИЕ 4 Используя Linq to XML (или Linq to JSON) создайте новый xml (json) - документ и напишите несколько запросов.
+            Console.WriteLine("\n--------------------- Linq to XML ---------------------\n");
+
+            XDocument xdoc = new XDocument();
+            XElement person1 = new XElement("person");
+            XAttribute NameAttr1 = new XAttribute("name", "Ваня");
+            XElement SurElem1 = new XElement("surname", "Иванов");
+            XElement AgeElem1 = new XElement("age", 37);
+            person1.Add(NameAttr1);
+            person1.Add(SurElem1);
+            person1.Add(AgeElem1);
+            
+            
+            XElement person2 = new XElement("person");
+            XAttribute NameAttr2 = new XAttribute("name", "Вася");
+            XElement SurElem2 = new XElement("surname", "Петров");
+            XElement AgeElem2 = new XElement("age", 41);
+            person2.Add(NameAttr2);
+            person2.Add(SurElem2);
+            person2.Add(AgeElem2);
+            
+            // создаем корневой элемент
+            XElement people = new XElement("people");
+            people.Add(person1);
+            people.Add(person2);
+            xdoc.Add(people);
+            xdoc.Save(@"D:\3sem\ООП\лабы\лр1\OOP_3sem\OOP_lab13\OOP_lab13\NewXML.xml");
+
+            Console.WriteLine("Введите возраст для поиска");
+            string ageXML = Console.ReadLine();
+            var allAlbums = people.Elements("person");
+
+            foreach (var item in allAlbums)
+            {
+                if (item.Element("age").Value == ageXML)
+                {
+                    Console.WriteLine(item.Value);
+                }
+            }
+
+            Console.WriteLine("Введите имя для поиска");
+            string nameXML = Console.ReadLine();
+            foreach (var item in allAlbums)
+            {
+                if (item.Attribute("name").Value == nameXML)
+                {
+                    Console.WriteLine(item.Value);
+                }
+            }
         }
 
 
