@@ -12,8 +12,9 @@ namespace Laba16
         private static void Main(string[] args)
         {
             Console.WriteLine();
-             Task1();
-            Task2();
+             /*Task1();
+            Task3();*/
+            Task5();
             Console.ReadKey();
         }
 
@@ -37,7 +38,7 @@ namespace Laba16
             Console.WriteLine("Время выполнения: " + sw.Elapsed + "\n");//затраченное время
 
         }
-        private static void Task2() {
+        private static void Task3() {
             CancellationTokenSource tokenSource = new CancellationTokenSource();
             CancellationToken token = tokenSource.Token;
             var task = new Task(() =>
@@ -61,6 +62,36 @@ namespace Laba16
                 tokenSource.Dispose();
             }
         }
+        private static void Task5() {
+            Task<int> sumTask = new Task<int>(() => Sum(4, 5));
+            // задача продолжения
+            Task<int> subTask = sumTask.ContinueWith(t => Sub(4, 5));
+            Task<int> mulTask = subTask.ContinueWith(t => Mul(4, 5));
+            Task printTask1 = sumTask.ContinueWith(t => PrintResult(t.Result));
+            Task printTask2 = subTask.ContinueWith(t => PrintResult(t.Result));
+            Task printTask3 = mulTask.ContinueWith(t => PrintResult(t.Result));
+
+            sumTask.Start();
+            
+            // ждем окончания второй задачи
+            printTask3.Wait();
+
+            int Sum(int a, int b) => a + b;
+            int Sub(int a, int b) => a - b;
+            int Mul(int a, int b) => a * b;
+            void PrintResult(int sum) => Console.WriteLine($"Результат задачи: {sum}");
+            // GetAwaiter. Этот метод предназначен для использования компилятором, а не для непосредственного использования в коде.
+        var awaiter = sumTask.GetAwaiter();
+
+
+            awaiter.OnCompleted(() =>
+            {
+                int res = awaiter.GetResult();
+                Console.WriteLine($"Результат задачи GetAwaiter(): {res}");
+            });
+
+        }
+
         private static void multiplicationMatrix(int size)
         {
             //перемножение матриц
@@ -95,6 +126,16 @@ namespace Laba16
                     Console.WriteLine();
                 }
             
+        }
+        private static int Task5_3(int x, int y, int z) {
+            return x + y + z;
+        }
+        public static int Task5_2(int x, int y, int z) {
+            return x * y * z;
+        }
+        private static int Task5_1(int x, int y, int z)
+        {
+            return y * y + z * z;
         }
 
     }
