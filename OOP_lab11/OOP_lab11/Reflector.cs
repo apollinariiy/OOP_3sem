@@ -99,5 +99,29 @@ namespace OOP_lab11
             object obj = Activator.CreateInstance(type, args: parm);
             Console.WriteLine(obj.ToString());
         }
+
+        public static void InfoToFile(string obj) {
+            Type type = Type.GetType(obj.ToString());
+            string path = "D:\\3sem\\ООП\\лабы\\лр1\\OOP_3sem\\OOP_lab11\\OOP_lab11\\reflector.txt";
+            using (StreamWriter sw = new StreamWriter(path, false, Encoding.Default))
+            {
+                sw.WriteLine($"-----------------{obj}-----------------");
+                sw.WriteLine($"Ассембли:" + type.Assembly);
+                foreach (ConstructorInfo constructorInfo in type.GetConstructors())
+                    sw.WriteLine(constructorInfo);
+                sw.WriteLine($"Методы:");
+                foreach (MethodInfo methodInfo in type.GetMethods())
+                    sw.WriteLine(methodInfo.Name);
+                sw.WriteLine($"Поля и свойства:");
+                foreach (FieldInfo fieldInfo in type.GetFields())
+                    sw.WriteLine(fieldInfo);
+                foreach (PropertyInfo propertyInfo in type.GetProperties())
+                    sw.WriteLine(propertyInfo);
+                sw.WriteLine($"Интерфейсы:");
+                foreach (Type interfaceMapping in type.GetInterfaces())
+                    sw.WriteLine(interfaceMapping);
+                sw.WriteLine();
+            }
+        }
     }
 }

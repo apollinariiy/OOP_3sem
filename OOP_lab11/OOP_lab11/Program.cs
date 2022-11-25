@@ -13,6 +13,7 @@ namespace OOP_lab11
     {
         static void Main(string[] args)
         {
+            
             Program program = new Program();
             Console.WriteLine("\n--------------------------------- Reflector for class Test ---------------------------------\n");
             Console.WriteLine("\t---- СБОРКА: ----");
@@ -29,12 +30,7 @@ namespace OOP_lab11
             Console.WriteLine("\t---- МЕТОДЫ ПО ПАРАМЕТРУ: ----");
             Reflector.MethodForType("OOP_lab11.Test", "String");
             Console.WriteLine();
-            Console.WriteLine("\t---- СЧИТЫВАНИЕ ИНФОРМАЦИИ  ИЗ ФАЙЛА: ----");
-           /* Reflector.Invoke("OOP_lab11.Test", "Toconsole");
-            Console.WriteLine();*/
-            Console.WriteLine("\t---- СОЗДАНИЕ ОБЪЕКТА ПЕРЕДАННОГО ТИПА: ----");
-            Reflector.Create("OOP_lab11.Test", "Polina");
-
+           
 
             Console.WriteLine("\n\n--------------------------------- Reflector for class Trans ---------------------------------\n");
             Console.WriteLine("\t---- СБОРКА: ----");
@@ -81,8 +77,15 @@ namespace OOP_lab11
             Reflector.MethodForType("System.Object", "String");
             Console.WriteLine();
 
+            Reflector.InfoToFile("OOP_lab11.Test");
+            Reflector.InfoToFile("OOP_lab11.Human");
+            Reflector.InfoToFile("OOP_lab11.Trans");
 
-
+            Console.WriteLine("\t---- СЧИТЫВАНИЕ ИНФОРМАЦИИ  ИЗ ФАЙЛА: ----");
+            Reflector.Invoke("OOP_lab11.Test", "Toconsole");
+            Console.WriteLine();
+            Console.WriteLine("\t---- СОЗДАНИЕ ОБЪЕКТА ПЕРЕДАННОГО ТИПА: ----");
+            Reflector.Create("OOP_lab11.Test", "Polina");
 
 
         }

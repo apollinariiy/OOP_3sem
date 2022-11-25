@@ -1,0 +1,33 @@
+-----------------OOP_lab11.Trans-----------------
+Ассембли:OOP_lab11, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Void .ctor(System.String, System.String, System.String, System.String, Int32)
+Методы:
+get_NameTrans
+set_NameTrans
+ToString
+DoClone
+Count
+get_TypeIntelligent
+set_TypeIntelligent
+get_number
+set_number
+get_License
+set_License
+get_NameCar
+set_NameCar
+get_TypeVehicle
+set_TypeVehicle
+GetType
+ToString
+Equals
+GetHashCode
+Поля и свойства:
+System.String NameTrans
+System.String TypeIntelligent
+Int32 number
+Int32 License
+System.String NameCar
+System.String TypeVehicle
+Интерфейсы:
+OOP_lab11.IDo
+
