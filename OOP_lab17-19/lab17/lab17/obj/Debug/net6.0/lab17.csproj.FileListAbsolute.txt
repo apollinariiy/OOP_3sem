@@ -1,0 +1,15 @@
+D:\2_course\OOP\lab17-18\lab17\lab17\bin\Debug\net6.0\lab17.exe
+D:\2_course\OOP\lab17-18\lab17\lab17\bin\Debug\net6.0\lab17.deps.json
+D:\2_course\OOP\lab17-18\lab17\lab17\bin\Debug\net6.0\lab17.runtimeconfig.json
+D:\2_course\OOP\lab17-18\lab17\lab17\bin\Debug\net6.0\lab17.dll
+D:\2_course\OOP\lab17-18\lab17\lab17\bin\Debug\net6.0\lab17.pdb
+D:\2_course\OOP\lab17-18\lab17\lab17\obj\Debug\net6.0\lab17.csproj.AssemblyReference.cache
+D:\2_course\OOP\lab17-18\lab17\lab17\obj\Debug\net6.0\lab17.GeneratedMSBuildEditorConfig.editorconfig
+D:\2_course\OOP\lab17-18\lab17\lab17\obj\Debug\net6.0\lab17.AssemblyInfoInputs.cache
+D:\2_course\OOP\lab17-18\lab17\lab17\obj\Debug\net6.0\lab17.AssemblyInfo.cs
+D:\2_course\OOP\lab17-18\lab17\lab17\obj\Debug\net6.0\lab17.csproj.CoreCompileInputs.cache
+D:\2_course\OOP\lab17-18\lab17\lab17\obj\Debug\net6.0\lab17.dll
+D:\2_course\OOP\lab17-18\lab17\lab17\obj\Debug\net6.0\refint\lab17.dll
+D:\2_course\OOP\lab17-18\lab17\lab17\obj\Debug\net6.0\lab17.pdb
+D:\2_course\OOP\lab17-18\lab17\lab17\obj\Debug\net6.0\lab17.genruntimeconfig.cache
+D:\2_course\OOP\lab17-18\lab17\lab17\obj\Debug\net6.0\ref\lab17.dll
