@@ -6,6 +6,8 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
+//Паттерн Прототип (Prototype) позволяет создавать объекты на основе уже ранее созданных объектов-прототипов.
+//То есть по сути данный паттерн предлагает технику клонирования объектов.
 namespace lab17
 {
     [Serializable]

@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+//Паттерн Стратегия (Strategy) представляет шаблон проектирования, который определяет набор алгоритмов,
+//инкапсулирует каждый из них и обеспечивает их взаимозаменяемость.
 namespace lab17
 {
     interface IStudy
     {
         void Study();
     }
-
+    //разные реализации интерфейса 
     class NeedStudy : IStudy
     {
         public void Study()
@@ -26,6 +27,7 @@ namespace lab17
             Console.WriteLine("Сегодня не надо учится");
         }
     }
+    //хранилище реализаций
     class Study
     {
 

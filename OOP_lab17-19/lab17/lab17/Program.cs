@@ -29,7 +29,7 @@ namespace lab17
             Faculty wheatFaculty = Student.Facult(builder1);
             Console.WriteLine(wheatFaculty.ToString());
 
-
+            //abstract factory
             Console.WriteLine();
             Leaver lever1 = new Leaver(new BioFactory()); //биология
             lever1.Enrol_course();
