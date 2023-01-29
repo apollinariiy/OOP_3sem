@@ -28,7 +28,7 @@ namespace OOP_lab6
             this.Year = year;
             if (this.Year > 2022 || this.Year < 0)
             {
-                throw new DateException("Ошибка! Некорректо введена дата:", this.Year);
+                throw new DateException("Ошибка! Некорректо введена дата:", this.Year);//////////////////////////////////////////
             }
         }
     }
@@ -83,7 +83,10 @@ namespace OOP_lab6
             public void SearchPower(int power)
             {
                 if (power > 9999 || power < 0)
-                    throw new SearchPowerException("Ошибка! Неверно введена мощность для поиска:", power);
+                {
+                    throw new SearchPowerException("Ошибка! Неверно введена мощность для поиска:", power);//////////////////////////////////////////////
+                }
+                
                 Console.WriteLine("\nПоиск мощности...   " + power);
                 for (int i = 0; i < Armiya.Count; i++)
                 {

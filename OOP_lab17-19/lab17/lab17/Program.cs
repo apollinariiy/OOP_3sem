@@ -42,7 +42,7 @@ namespace lab17
             //Singleton
             Console.WriteLine();
             Abitur abitur = new Abitur();
-            abitur.FIO("Darurusha Sergeevna Grigorenko");
+            abitur.FIO("Glushenya Polina Andreevna");
             Console.WriteLine(abitur.Inform.Name);
     
             Console.WriteLine();

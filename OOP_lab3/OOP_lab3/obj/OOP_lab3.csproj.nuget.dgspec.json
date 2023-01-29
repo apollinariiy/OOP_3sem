@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\3sem\\ООП\\лабы\\лр1\\OOP_lab3\\OOP_lab3\\OOP_lab3.csproj": {}
+    "D:\\3sem\\ООП\\лабы\\лр1\\OOP_3sem\\OOP_lab3\\OOP_lab3\\OOP_lab3.csproj": {}
   },
   "projects": {
-    "D:\\3sem\\ООП\\лабы\\лр1\\OOP_lab3\\OOP_lab3\\OOP_lab3.csproj": {
+    "D:\\3sem\\ООП\\лабы\\лр1\\OOP_3sem\\OOP_lab3\\OOP_lab3\\OOP_lab3.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\3sem\\ООП\\лабы\\лр1\\OOP_lab3\\OOP_lab3\\OOP_lab3.csproj",
+        "projectUniqueName": "D:\\3sem\\ООП\\лабы\\лр1\\OOP_3sem\\OOP_lab3\\OOP_lab3\\OOP_lab3.csproj",
         "projectName": "OOP_lab3",
-        "projectPath": "D:\\3sem\\ООП\\лабы\\лр1\\OOP_lab3\\OOP_lab3\\OOP_lab3.csproj",
+        "projectPath": "D:\\3sem\\ООП\\лабы\\лр1\\OOP_3sem\\OOP_lab3\\OOP_lab3\\OOP_lab3.csproj",
         "packagesPath": "C:\\Users\\Друг\\.nuget\\packages\\",
-        "outputPath": "D:\\3sem\\ООП\\лабы\\лр1\\OOP_lab3\\OOP_lab3\\obj\\",
+        "outputPath": "D:\\3sem\\ООП\\лабы\\лр1\\OOP_3sem\\OOP_lab3\\OOP_lab3\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Друг\\AppData\\Roaming\\NuGet\\NuGet.Config",

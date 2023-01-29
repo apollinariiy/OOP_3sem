@@ -5,6 +5,7 @@ using static OOP_lab6.ArmyContainer;
 
 namespace OOP_Lab6
 {
+    //исключения: неверная дата, неверное имя, неверная мощность, неверная поисковая мощность, деление  на ноль, выход за границы массива
     class Program
     {
         static void Main()
@@ -17,8 +18,8 @@ namespace OOP_Lab6
             try
             {
                 ArmyController army = new ArmyController();
-                Trans trans1 = new Trans("YU2345", new Date(2022), 8700);
-                Trans trans2 = new Trans("YU22", new Date(20222), 8710);
+                Trans trans1 = new Trans("YU2345", new Date(2022), 870000);
+                Trans trans2 = new Trans("Y23232", new Date(20222), 8710);
                 Human hu1 = new Human("Антон", new Date(2002));
                 Human hu2 = new Human("Андрей", new Date(2006));
 
@@ -29,13 +30,14 @@ namespace OOP_Lab6
 
                 army.Display();
                 army.Count();
-                army.SearchDate(new Date(2002));
+                army.SearchDate(new Date(20022));
                 army.SearchPower(8700);
             }
             catch (MyException ex)
             {
                 fileLogger.WriteLog(ex);
-               
+                consoleLogger.WriteLog(ex);
+
             }
             finally {
                 Console.WriteLine("Программа завершена");
@@ -69,8 +71,35 @@ namespace OOP_Lab6
                 Console.WriteLine(e.Message + "\n");
                
             }
-            
-           
+
+            //многоразовая обработка 
+            try
+            {
+                try
+                {
+                    Trans trans3 = new Trans("YU22", new Date(20222), 8710);
+                    if (trans3.Year > 0)
+                    {
+                        throw new DateException("Неверная дата!", trans3.Year);
+                    }
+                }
+
+                catch (DateException e)
+                {
+                   
+                    Console.WriteLine(e.Message + "\n");
+                    throw;
+
+                }
+            }
+
+            catch (DateException e)
+            {
+                
+                Console.WriteLine(e.Message + "\n");
+                
+            }
+
         }
     }
 }

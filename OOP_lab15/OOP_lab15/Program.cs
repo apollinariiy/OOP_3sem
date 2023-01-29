@@ -12,16 +12,17 @@ namespace Laba16
         private static async Task Main(string[] args)
         {
             Console.WriteLine();
-            Task1();
-           /* Task3();
-            Task5();*/
-            /* Task6();*/
+            /*  Task1();*/
+            /* Task3();
+             Task5();*/
+            Task6();
+            /*   Task7();*/
             /*Task8();*/
             /*  await Task9();*/
 
         }
 
-        private static void Task1()
+        private static void Task1() //Используя TPL создайте длительную по времени задачу (на основе Task) на выбор(перемножение матриц)
         {
             var task = new Task(() =>
             {
@@ -40,8 +41,15 @@ namespace Laba16
             Console.WriteLine("Статус задачи после выполнения: " + task.Status);
             Console.WriteLine("Время выполнения: " + sw.Elapsed + "\n");//затраченное время
 
+            var sw2 = new Stopwatch();
+            sw2.Start();
+            multiplicationMatrix(20);
+            sw2.Stop();
+            Console.WriteLine("Время выполнения последовательного алгоритма: " + sw2.Elapsed + "\n");
+
         }
-        private static void Task3() {
+        private static void Task3()
+        {//Реализуйте второй вариант этой же задачи с токеном отмены CancellationToken и отмените задачу
             CancellationTokenSource tokenSource = new CancellationTokenSource();
             CancellationToken token = tokenSource.Token;
             var task = new Task(() =>
@@ -65,7 +73,8 @@ namespace Laba16
                 tokenSource.Dispose();
             }
         }
-        private static void Task5() {
+        private static void Task5()
+        {//Создайте задачу продолжения (continuation task) в двух вариантах
             Task<int> sumTask = new Task<int>(() => Sum(4, 5));
             // задача продолжения
             Task<int> subTask = sumTask.ContinueWith(t => Sub(4, 5));

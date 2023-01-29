@@ -29,10 +29,12 @@ namespace OOP_Lab14
             {
                 Console.WriteLine(assembly.GetName().Name);
             }
-
-           /* var newDomain = AppDomain.CreateDomain("Domain"); ??????
-            newDomain.Load(Assembly.GetExecutingAssembly().GetName());//Creating and unloading AppDomains is not supported and throws an exception.??
+            
+          /*  var newDomain = AppDomain.CreateDomain("Domain"); *//*??????*//*
+            newDomain.Load(Assembly.GetExecutingAssembly().FullName);//Creating and unloading AppDomains is not supported and throws an exception.??
             AppDomain.Unload(newDomain);*/
+
+
 
             //ЗАДАНИЕ 3. Создайте в отдельном потоке следующую задачу расчета.
 

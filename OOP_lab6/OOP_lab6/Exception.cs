@@ -73,19 +73,19 @@ namespace OOP_Lab6
             streamWriter.WriteLine(DateTime.Now);
             if (DateEx != null)
             {
-                streamWriter.WriteLine("{0}{1} {2}", DateEx.ErrorClass, DateEx.Message, DateEx.Year); ;
+                streamWriter.WriteLine("{0}{1} {2} {3}", DateEx.ErrorClass, DateEx.Message, DateEx.Year, DateEx.StackTrace); ;
             }
             if (PowerEx != null)
             {
-                streamWriter.WriteLine("{0}{1} {2}", PowerEx.ErrorClass, PowerEx.Message, PowerEx.Power);
+                streamWriter.WriteLine("{0}{1} {2} {3}", PowerEx.ErrorClass, PowerEx.Message, PowerEx.Power, PowerEx.StackTrace); ;
             }
             if (SearchEx != null)
             {
-                streamWriter.WriteLine("{0}{1} {2}", SearchEx.ErrorClass, SearchEx.Message, SearchEx.Power);
+                streamWriter.WriteLine("{0}{1} {2} {3}", SearchEx.ErrorClass, SearchEx.Message, SearchEx.Power, SearchEx.StackTrace); ;
             }
             if (NameEx != null)
             {
-                streamWriter.WriteLine("{0}{1} {2}", NameEx.ErrorClass, NameEx.Message, NameEx.Name);
+                streamWriter.WriteLine("{0}{1} {2} {3}", NameEx.ErrorClass, NameEx.Message, NameEx.Name, SearchEx.StackTrace); ;
             }
         }
     }

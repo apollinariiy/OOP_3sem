@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\3sem\\ООП\\лабы\\лр1\\OOP_lab2\\lab2\\lab2.csproj": {}
+    "D:\\3sem\\ООП\\лабы\\лр1\\OOP_3sem\\OOP_lab2\\lab2\\lab2.csproj": {}
   },
   "projects": {
-    "D:\\3sem\\ООП\\лабы\\лр1\\OOP_lab2\\lab2\\lab2.csproj": {
+    "D:\\3sem\\ООП\\лабы\\лр1\\OOP_3sem\\OOP_lab2\\lab2\\lab2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\3sem\\ООП\\лабы\\лр1\\OOP_lab2\\lab2\\lab2.csproj",
+        "projectUniqueName": "D:\\3sem\\ООП\\лабы\\лр1\\OOP_3sem\\OOP_lab2\\lab2\\lab2.csproj",
         "projectName": "lab2",
-        "projectPath": "D:\\3sem\\ООП\\лабы\\лр1\\OOP_lab2\\lab2\\lab2.csproj",
+        "projectPath": "D:\\3sem\\ООП\\лабы\\лр1\\OOP_3sem\\OOP_lab2\\lab2\\lab2.csproj",
         "packagesPath": "C:\\Users\\Друг\\.nuget\\packages\\",
-        "outputPath": "D:\\3sem\\ООП\\лабы\\лр1\\OOP_lab2\\lab2\\obj\\",
+        "outputPath": "D:\\3sem\\ООП\\лабы\\лр1\\OOP_3sem\\OOP_lab2\\lab2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Друг\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -172,14 +172,11 @@ namespace OOP_Lab10
             Car car1 = new Car("BMW", 2000);
             Car car2 = new Car("Audi", 1999);
             
-            List<Car> stud = new List<Car>() { car1, car2 };      /// создаем список с объектами-издательствами
+            List<Car> stud = new List<Car>() { car1, car2 };      
             var Join = from car in stud
-                       join owner in students on car.Price equals owner.Birthday /// присоединяем свойства с publisher, 
-                                                                                 /// если названия издательства совпадают 
-                                                                                 /// (Name в Publisher и Publisher в Book)
+                       join owner in students on car.Price equals owner.Birthday  //если цена машины равна году рождения студента
                        select new { car.Name, owner.Surname }; 
-                                                  /// создаём анонимный тип со свойствами от
-                                                  /// Book (Name) и Publisher (Name, Country)
+                                                 
             foreach (var item in Join)
             {
                 Console.WriteLine($"{item.Name} - {item.Surname}");

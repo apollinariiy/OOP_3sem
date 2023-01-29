@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Xml;
 using System.Xml.Linq;
 using System.Runtime.Serialization.Formatters;
+using System.Net.Sockets;
+using System.Net;
 
 namespace OOP_lab13
 {
@@ -10,8 +12,11 @@ namespace OOP_lab13
     {
         static void Main(string[] args)
         {
-
-            /*//ЗАДАНИЕ 1. Выполните сериализацию/десериализацию объекта используя форматы(Binary, SOAP, JSON, XML)
+            Task1();
+      
+        }
+        public static void Task1() {
+         //ЗАДАНИЕ 1. Выполните сериализацию/десериализацию объекта используя форматы(Binary, SOAP, JSON, XML)
             Car forBin = new Car();
             Car forSoap = new Car();
             Car forXml = new Car();
@@ -32,7 +37,8 @@ namespace OOP_lab13
             Console.WriteLine($"(.BIN){forBin.ToString()}\nNonSerialized:{forBin.ThisNonSerialized}\n");
             Console.WriteLine($"(.XML){forXml.ToString()}\nNonSerialized:{forXml.ThisNonSerialized}\n");
             Console.WriteLine($"(.SOAP){forSoap.ToString()}\nNonSerialized:{forSoap.ThisNonSerialized}\n");
-
+        }
+        public static void Task2() {
             //ЗАДАНИЕ 2. Создайте коллекцию (массив) объектов и выполните сериализацию/десериализацию – возможность сохранения и загрузки спсика объектов в/из файла.
             Console.WriteLine("\n--------------------- collection deserialization ---------------------\n");
             List<Car> forCollXml = new List<Car>();
@@ -49,15 +55,16 @@ namespace OOP_lab13
             foreach (var item in forCollXml)
             {
                 Console.WriteLine(item.ToString());
-            }*/
-
+            }
+        }
+        public static void Task3() {
             //ЗАДАНИЕ 3. Используя XPath напишите два селектора для вашего XML документа.
             //InnerText возвращает текстовое значение узла
             Console.WriteLine("\n--------------------- XPath 1 селектор ---------------------\n");
             XmlDocument xDoc = new XmlDocument();
             xDoc.Load(@"D:\3sem\ООП\лабы\лр1\OOP_3sem\OOP_lab13\OOP_lab13\XML.xml");
             XmlElement xRoot = xDoc.DocumentElement;
-            
+
             XmlNodeList childnodes = xRoot.SelectNodes("Car");//SelectNodes(): выборка по запросу коллекции узлов в виде объекта XmlNodeList
             foreach (XmlNode n in childnodes)//XPath
             {
@@ -70,8 +77,9 @@ namespace OOP_lab13
             {
                 Console.WriteLine(n.Name); //Name возвращает название узла.
             }
+        }
 
-
+        public static void Task4() {
             //ЗАДАНИЕ 4 Используя Linq to XML (или Linq to JSON) создайте новый xml (json) - документ и напишите несколько запросов.
             Console.WriteLine("\n--------------------- Linq to XML ---------------------\n");
 
@@ -83,8 +91,8 @@ namespace OOP_lab13
             person1.Add(NameAttr1);
             person1.Add(SurElem1);
             person1.Add(AgeElem1);
-            
-            
+
+
             XElement person2 = new XElement("person");
             XAttribute NameAttr2 = new XAttribute("name", "Вася");
             XElement SurElem2 = new XElement("surname", "Петров");
@@ -92,7 +100,7 @@ namespace OOP_lab13
             person2.Add(NameAttr2);
             person2.Add(SurElem2);
             person2.Add(AgeElem2);
-            
+
             // создаем корневой элемент
             XElement people = new XElement("people");
             people.Add(person1);
@@ -122,6 +130,36 @@ namespace OOP_lab13
                 }
             }
         }
+        public static void Task5() {
+            //Создайте клиент и сервер на синхронных сокетах. Нужно сериализованные данные(объект) отправить по сокету и десериализовать на стороне клиента.
+            Console.WriteLine("\n--------------------- Сервер ---------------------\n");
+            IPAddress ip = IPAddress.Parse("127.0.0.1");
+            IPEndPoint ipPoint = new IPEndPoint(ip, 8080);
+            Socket listenSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+            try
+            {
+                listenSocket.Bind(ipPoint);
+                listenSocket.Listen(10);
+                Console.WriteLine("Сервер запущен. Ожидание подключений...");
+                Socket handler = listenSocket.Accept();
+                Console.WriteLine("Подключен клиент");
+                Car car = new Car("Lada", 4000);
+                CustomSerializer.SerializeToXml(car);
+                byte[] data = File.ReadAllBytes(@"D:\3sem\ООП\лабы\лр1\OOP_3sem\OOP_lab13\OOP_lab13\XML.xml");
+                handler.Send(data);
+                handler.Shutdown(SocketShutdown.Both);
+                handler.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+
+
+        }
+
+
 
 
     }
